@@ -1,5 +1,4 @@
 # General
-alias l='ls -laF'
 alias rmcore='rmcore.py'
 
 # Development
