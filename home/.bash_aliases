@@ -12,13 +12,8 @@ fi
 # Chroots
 if [ -f /usr/bin/schroot ]; then
   alias schroot='schroot -p'
-  if [ -f /srv/chroot/lenny ]; then
-    alias lenny='schroot -c lenny'
-  fi
-  if [ -f /srv/chroot/trusty-i386 ]; then
-    alias trusty-i386='schroot -c trusty-i386'
-  fi
-  if [ -f /srv/chroot/xenial-i386 ]; then
-    alias trusty-i386='schroot -c xenial-i386'
-  fi
+  for f in /srv/chroot/*; do
+    CHROOT=`basename $f`
+    alias $CHROOT='schroot -c $CHROOT'
+  done
 fi
