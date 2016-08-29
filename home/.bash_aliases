@@ -14,6 +14,6 @@ if [ -f /usr/bin/schroot ]; then
   alias schroot='schroot -p'
   for f in /srv/chroot/*; do
     CHROOT=`basename $f`
-    alias $CHROOT='schroot -c $CHROOT'
+    alias $CHROOT="schroot -c ${CHROOT}"
   done
 fi
