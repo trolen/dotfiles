@@ -122,6 +122,10 @@ if [ -f ~/trunk/app/scripts/dev.bashrc ]; then
   . ~/trunk/app/scripts/dev.bashrc
 fi
 
+# Enable core files
+ulimit -c unlimited
+
+# Homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 homeshick refresh
