@@ -19,4 +19,7 @@ if [ -f /usr/bin/schroot ]; then
   if [ -f /srv/chroot/trusty-i386 ]; then
     alias trusty-i386='schroot -c trusty-i386'
   fi
+  if [ -f /srv/chroot/xenial-i386 ]; then
+    alias trusty-i386='schroot -c xenial-i386'
+  fi
 fi
