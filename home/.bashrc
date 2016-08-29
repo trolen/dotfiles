@@ -126,6 +126,8 @@ fi
 ulimit -c unlimited
 
 # Homeshick
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
-source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
-homeshick refresh
+if [ -f /usr/bin/git ]; then
+  source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+  source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
+  homeshick refresh
+fi
