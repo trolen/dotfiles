@@ -1,7 +1,10 @@
 # General
 alias rmcore='rmcore.py'
-if [ -f /usr/bin/ack-grep ]; then
-  alias ack='ack-grep'
+ACK_GREP=$(which ack-grep)
+if [ -n "$ACK_GREP" ]; then
+  if [ ! $(which ack >/dev/null) ]; then
+    alias ack=$ACK_GREP
+  fi
 fi
 
 # Development
