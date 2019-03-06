@@ -1,5 +1,8 @@
 # General
 alias rmcore='rmcore.py'
+if [ -f /usr/bin/ack-grep ]; then
+  alias ack='ack-grep'
+fi
 
 # Development
 if [ -f /usr/local/eclipse/eclipse ]; then
