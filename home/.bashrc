@@ -120,6 +120,7 @@ fi
 
 if [ -f ~/trunk/app/scripts/dev.bashrc ]; then
   . ~/trunk/app/scripts/dev.bashrc
+  export DEBFULLNAME="Tim Rolen"
 fi
 
 # Enable core files
