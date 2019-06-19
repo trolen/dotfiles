@@ -113,6 +113,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Set XAUTHORITY for X11 forwarding
+if [ -f $HOME/.Xauthority ]; then
+  export XAUTHORITY=$HOME/.Xauthority
+fi
+
 # Additional commands and aliases for setting up our development environment
 if [ -f ~/trunk/PortableOS/fs/usr/local/dev-bin/devaliases.rc ]; then
     . ~/trunk/PortableOS/fs/usr/local/dev-bin/devaliases.rc
