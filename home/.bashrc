@@ -37,7 +37,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+    xterm-color|*-256color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -84,6 +84,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -116,24 +119,4 @@ fi
 # Set XAUTHORITY for X11 forwarding
 if [ -f $HOME/.Xauthority ]; then
   export XAUTHORITY=$HOME/.Xauthority
-fi
-
-# Additional commands and aliases for setting up our development environment
-if [ -f ~/trunk/PortableOS/fs/usr/local/dev-bin/devaliases.rc ]; then
-    . ~/trunk/PortableOS/fs/usr/local/dev-bin/devaliases.rc
-fi
-
-if [ -f ~/trunk/app/scripts/dev.bashrc ]; then
-  . ~/trunk/app/scripts/dev.bashrc
-  export DEBFULLNAME="Tim Rolen"
-fi
-
-# Enable core files
-ulimit -c unlimited
-
-# Homeshick
-if [ -f /usr/bin/git ]; then
-  source "$HOME/.homesick/repos/homeshick/homeshick.sh"
-  source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
-  homeshick refresh
 fi
