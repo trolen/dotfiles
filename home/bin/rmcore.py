@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 import sys
 import os
@@ -10,7 +10,7 @@ parser.add_argument('-r', '--recurse', dest='recurse', help='recurse subfolders'
 args = parser.parse_args()
 
 if not os.path.isdir(args.folder):
-	print 'Starting folder does not exist'
+	print('Starting folder does not exist')
 	sys.exit(1)
 
 if args.recurse:
@@ -19,5 +19,5 @@ if args.recurse:
 
 filename = os.path.join(args.folder, 'core')
 if os.path.isfile(filename):
-	print filename
+	print(filename)
 	os.remove(filename)
