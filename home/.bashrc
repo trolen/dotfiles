@@ -120,3 +120,7 @@ fi
 if [ -f $HOME/.Xauthority ]; then
   export XAUTHORITY=$HOME/.Xauthority
 fi
+
+# Enable homeshick
+source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+homeshick check
